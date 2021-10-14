@@ -2,11 +2,40 @@
   "name": "noble-ristretto255-sha256",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config jestconfig.json --no-cache",
+    "lint": "eslint -c .eslintrc.js  '**/*.ts'",
+    "format": "prettier '**/{*.{js?(on),ts?(x),md},.*.js?(on)}' --write --list-different --config prettier.config.js",
+    "prepare": "yarn run build",
+    "build": "tsc -d",
+    "prepublishOnly": "yarn run lint",
+    "preversion": "yarn run lint && yarn test",
+    "version": "yarn run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "keywords": [],
-  "author": "",
-  "license": "GPL-v3-only"
+  "author": "rolfe@privacyresearch.io",
+  "license": "GPL-3.0-only",
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.2.5",
+    "prettier": "^2.4.1",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "hash.js": "^1.1.7",
+    "noble-ed25519": "^1.2.6"
+  },
+  "files": [
+    "lib/*.js",
+    "lib/*.d.ts"
+  ]
 }
