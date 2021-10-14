@@ -11,10 +11,6 @@ export function deserializeScalar(buf: Uint8Array): bigint {
     return mod(bytesToNumberLE(buf), CURVE.n)
 }
 
-export function serializeNumber(n: bigint): Uint8Array {
-    const len = Math.ceil((n.toString(16).length - 2) / 2)
-    return numberToBytesPadded(n, len)
-}
 export function deserializeNumber(buf: Uint8Array): bigint {
     return bytesToNumberLE(buf)
 }

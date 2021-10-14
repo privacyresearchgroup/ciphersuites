@@ -59,5 +59,5 @@ export type Group<PointType, IntType, ScalarType = IntType> = GroupBase<PointTyp
 export interface PrimeGroupCiphersuite<PointType, IntType, ScalarType = IntType> {
     GG: Group<PointType, IntType, ScalarType>
     hash(input: Uint8Array): Uint8Array
-    ID: number | string
+    ID: number
 }

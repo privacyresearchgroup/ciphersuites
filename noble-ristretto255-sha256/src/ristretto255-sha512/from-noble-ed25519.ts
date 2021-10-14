@@ -46,20 +46,8 @@ export function bytesToNumberLE(uint8a: Uint8Array): bigint {
     return value
 }
 
-export function bytes255ToNumberLE(bytes: Uint8Array): bigint {
-    return mod(bytesToNumberLE(bytes) & (2n ** 255n - 1n))
-}
-
 // Convert between types
 // ---------------------
-export function bytesToHex(uint8a: Uint8Array): string {
-    // pre-caching chars could speed this up 6x.
-    let hex = ''
-    for (let i = 0; i < uint8a.length; i++) {
-        hex += uint8a[i].toString(16).padStart(2, '0')
-    }
-    return hex
-}
 
 export function hexToBytes(hex: string): Uint8Array {
     if (typeof hex !== 'string') {
@@ -72,14 +60,4 @@ export function hexToBytes(hex: string): Uint8Array {
         array[i] = Number.parseInt(hex.slice(j, j + 2), 16)
     }
     return array
-}
-
-export function numberToHex(num: number | bigint): string {
-    const hex = num.toString(16)
-    return hex.length & 1 ? `0${hex}` : hex
-}
-
-export function numberToBytesPadded(num: bigint, length = 32) {
-    const hex = numberToHex(num).padStart(length * 2, '0')
-    return hexToBytes(hex).reverse()
 }
