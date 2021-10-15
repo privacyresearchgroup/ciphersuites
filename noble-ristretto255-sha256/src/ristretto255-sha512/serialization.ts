@@ -20,7 +20,7 @@ export function numberToHex(num: number | bigint): string {
     return hex.length & 1 ? `0${hex}` : hex
 }
 
-export function numberToBytesPadded(num: bigint, length = 32): Uint8Array {
+export function numberToBytesPadded(num: bigint, length: number): Uint8Array {
     const hex = numberToHex(num).padStart(length * 2, '0')
     return hexToBytes(hex).reverse()
 }

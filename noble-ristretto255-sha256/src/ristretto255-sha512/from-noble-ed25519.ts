@@ -24,7 +24,7 @@ export function invert(number: bigint, modulo: bigint = CURVE.P): bigint {
     if (gcd !== 1n) throw new Error('invert: does not exist')
     return mod(x, modulo)
 }
-export function mod(a: bigint, b: bigint = CURVE.P) {
+export function mod(a: bigint, b: bigint) {
     const res = a % b
     return res >= 0n ? res : b + res
 }
@@ -50,9 +50,6 @@ export function bytesToNumberLE(uint8a: Uint8Array): bigint {
 // ---------------------
 
 export function hexToBytes(hex: string): Uint8Array {
-    if (typeof hex !== 'string') {
-        throw new TypeError('hexToBytes: expected string, got ' + typeof hex)
-    }
     if (hex.length % 2) throw new Error('hexToBytes: received invalid unpadded hex')
     const array = new Uint8Array(hex.length / 2)
     for (let i = 0; i < array.length; i++) {

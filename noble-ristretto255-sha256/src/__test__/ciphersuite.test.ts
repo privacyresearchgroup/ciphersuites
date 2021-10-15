@@ -2,6 +2,8 @@ import { ristretto255SHA512Ciphersuite } from '..'
 import { VerifiableClientContextImpl, VerifiableServerContextImpl } from '@privacyresearch/oprf-ts'
 import { hexToBytes } from '../ristretto255-sha512/from-noble-ed25519'
 import { numberArrayXOR, OPRFCiphersuite, OPRFMode } from '@privacyresearch/ciphersuite-shared'
+import { CURVE } from 'noble-ed25519'
+import { numberToHex } from '../ristretto255-sha512/serialization'
 
 describe('Test ciphersuite with OPRF protocol', () => {
     const ciphersuite = ristretto255SHA512Ciphersuite(OPRFMode.Verified)
@@ -169,6 +171,15 @@ describe('Test ciphersuite with OPRF protocol', () => {
             badPKClientContext.verifiableFinalizeBatch(input, blind, evaluatedElement, blindedElement, badProof, info)
         }).toThrow()
     }
+
+    test('group order', () => {
+        expect(ciphersuite.GG.order().toString()).toEqual(CURVE.n.toString())
+    })
+
+    test('hex padding', () => {
+        expect(numberToHex(1)).toEqual('01')
+        expect(numberToHex(17)).toEqual('11')
+    })
 
     test('A.1.2.3 Test Vector 2 Batch Size 2: ServerVerifiableServerContextContext::evaluate', () => {
         verifiableServerContextBatchSize1Evaluate(vectorsA123)
