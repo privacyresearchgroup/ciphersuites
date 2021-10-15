@@ -16,6 +16,7 @@
     "postversion": "git push && git push --tags"
   },
   "keywords": [],
+  "repository": "https://github.com/privacyresearchgroup/ciphersuites",
   "author": "rolfe@privacyresearch.io",
   "license": "GPL-3.0-only",
   "devDependencies": {
