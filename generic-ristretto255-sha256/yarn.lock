@@ -537,10 +537,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@privacyresearch/ciphersuite-shared@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@privacyresearch/ciphersuite-shared/-/ciphersuite-shared-0.0.1.tgz#e0940a0a0baae05532fa2875ccd459614de6fdfc"
-  integrity sha512-zChgGvvWVl0PlA/pULl6bH24CbeozlTEf/tUTgp48ifE5Sk8LMZFxmriIVVMYgWOc27GPv6/a2FIcezqxB8/xg==
+"@privacyresearch/ciphersuite-shared@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@privacyresearch/ciphersuite-shared/-/ciphersuite-shared-0.0.2.tgz#c018bb8c8e693e96b0e60b63a536ce9d48d087bb"
+  integrity sha512-eTYRzPo5GPuQEoJo5nkSwFtBpIw4Qdh4eyV6+x4UsxZiS60cqtb1+CTlAbzdnwrA/ursZ99pECNWyaTB5Gw3aw==
 
 "@privacyresearch/ed25519-ts@^0.0.1-rc":
   version "0.0.1"
@@ -2433,11 +2433,6 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
-
-noble-ed25519@^1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/noble-ed25519/-/noble-ed25519-1.2.6.tgz#a55b75c61da000498abb43ffd81caaa370bfed22"
-  integrity sha512-zfnWqg9FVMp8CnzUpAjbt1nDXpDjCvxYiCXdnW1mY8zQHw/6twUlkFm14VPdojVzc0kcd+i9zT79+26GcNbsuQ==
 
 node-int64@^0.4.0:
   version "0.4.0"
