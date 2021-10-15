@@ -1,6 +1,6 @@
 {
   "name": "@privacyresearch/ciphersuite-shared",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Type definitions and constants for standard ciphersuites",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
