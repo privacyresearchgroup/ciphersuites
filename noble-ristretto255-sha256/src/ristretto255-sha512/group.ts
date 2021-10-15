@@ -1,16 +1,17 @@
 // (c) 2021 Privacy Research, LLC https://privacyresearch.io,  GPL-v3-only: see LICENSE file.
 
 import { ExtendedPoint, CURVE, utils } from 'noble-ed25519'
-import { contextString, makeDST } from './specification-utils'
-import { Group, OPRFCiphersuite, OPRFMode } from './types'
+import { contextString, makeDST, Group, OPRFCiphersuite, OPRFMode } from '@privacyresearch/ciphersuite-shared'
+
 import { expand_message_xmd } from './hash'
 import { mod, invert, encodePrivate } from './from-noble-ed25519'
 import { deserializeNumber, serializeScalar, deserializeScalar } from './serialization'
+const SPEC_ID = Uint8Array.from([86, 79, 80, 82, 70, 48, 55, 45]) // "VOPRF07-"
 
 export class Ristretto255Group implements Group<ExtendedPoint, bigint> {
     private _contextString: Uint8Array
     constructor(private _verifyMode: OPRFMode) {
-        this._contextString = contextString(_verifyMode, OPRFCiphersuite.Ristretto255SHA512) // _verifyMode ? VERIFY_MODE_CONTEXT_STRING : BASE_MODE_CONTEXT_STRING
+        this._contextString = contextString(_verifyMode, OPRFCiphersuite.Ristretto255SHA512, SPEC_ID)
     }
     // GroupOps
     add(A: ExtendedPoint, B: ExtendedPoint): ExtendedPoint {

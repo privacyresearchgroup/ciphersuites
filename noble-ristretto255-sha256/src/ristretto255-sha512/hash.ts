@@ -1,8 +1,7 @@
 // (c) 2021 Privacy Research, LLC https://privacyresearch.io,  GPL-v3-only: see LICENSE file.
 
-import { I2OSP, Nh, numberArrayXOR } from './specification-utils'
+import { I2OSP, Nh, numberArrayXOR, OPRFCiphersuite } from '@privacyresearch/ciphersuite-shared'
 import * as hash from 'hash.js'
-import { OPRFCiphersuite } from './types'
 
 // TODO: abbstract this so it is implemented once for all siphersuites that use it
 // Specified at https://datatracker.ietf.org/doc/html/draft-irtf-cfrg-hash-to-curve-12#section-5.4.1
