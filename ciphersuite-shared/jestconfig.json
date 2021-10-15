@@ -2,16 +2,16 @@
   "transform": {
     "^.+\\.tsx?$": "ts-jest"
   },
-  "testRegex": "(src/__test__/.*\\.test\\..*|(\\.|/)(test|spec))\\.tsx?$",
+  "testRegex": "(src/__test__/.*\\.test\\..*|(\\.|/)(test|spec))\\.(t|j)sx?$",
   "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
   "collectCoverage": true,
   "coverageDirectory": "coverage",
   "coverageThreshold": {
     "global": {
-      "branches": 90,
-      "functions": 97,
-      "lines": 97,
-      "statements": 95
+      "branches": 99,
+      "functions": 99,
+      "lines": 99,
+      "statements": 99
     }
   },
   "coveragePathIgnorePatterns": ["node_modules", "__test__", "index.js"],

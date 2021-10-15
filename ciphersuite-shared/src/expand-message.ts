@@ -1,5 +1,5 @@
 import { I2OSP, numberArrayXOR } from '.'
-import * as hash from 'hash.js'
+import { sha512 } from 'hash.js'
 
 // Specified at https://datatracker.ietf.org/doc/html/draft-irtf-cfrg-hash-to-curve-12#section-5.4.1
 export function expand_message_xmd(
@@ -18,17 +18,15 @@ export function expand_message_xmd(
     const libStr = I2OSP(lenInBytes, 2)
     const msgprime = [...Zpad, ...msg, ...libStr, ...I2OSP(0, 1), ...DSTprime]
 
-    const b0 = hash.sha512().update(msgprime).digest()
-    const b1 = hash
-        .sha512()
+    const b0 = sha512().update(msgprime).digest()
+    const b1 = sha512()
         .update([...b0, ...I2OSP(1, 1), ...DSTprime])
         .digest()
     const bs = new Array<Array<number>>(ell + 1)
     bs[0] = b0
     bs[1] = b1
     for (let i = 2; i <= ell; ++i) {
-        bs[i] = hash
-            .sha512()
+        bs[i] = sha512()
             .update([...numberArrayXOR(bs[0], bs[i - 1]), ...I2OSP(i, 1), ...DSTprime])
             .digest()
     }

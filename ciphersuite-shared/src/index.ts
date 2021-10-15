@@ -3,3 +3,4 @@
 export * from './expand-message'
 export * from './specification-utils'
 export * from './types'
+export * from './voprf-constants'
