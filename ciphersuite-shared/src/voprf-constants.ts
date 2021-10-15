@@ -1,4 +1,4 @@
-// Ciphersuite IDs and modes for POPRFs in  https://cfrg.github.io/draft-irtf-cfrg-voprf/draft-irtf-cfrg-voprf.html#name-prime-order-group-dependenc
+// Ciphersuite IDs and modes for POPRFs in  https://cfrg.github.io/draft-irtf-cfrg-voprf/draft-irtf-cfrg-voprf.html
 export enum OPRFCiphersuite {
     Ristretto255SHA512 = 0x0001,
     Decaf448SHAKE256 = 0x0002,
