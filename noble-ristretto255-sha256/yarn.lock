@@ -537,10 +537,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@privacyresearch/ciphersuite-shared@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@privacyresearch/ciphersuite-shared/-/ciphersuite-shared-0.0.2.tgz#c018bb8c8e693e96b0e60b63a536ce9d48d087bb"
-  integrity sha512-eTYRzPo5GPuQEoJo5nkSwFtBpIw4Qdh4eyV6+x4UsxZiS60cqtb1+CTlAbzdnwrA/ursZ99pECNWyaTB5Gw3aw==
+"@privacyresearch/ciphersuite-shared@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@privacyresearch/ciphersuite-shared/-/ciphersuite-shared-0.0.3.tgz#3fe6bdb5b13233b6a1515d9c1a6a75132dfd3aa1"
+  integrity sha512-Z34+TpzNRf/4lT+l2IuyoTm4zauIioDfOEMWE0R6tXw2Bbtnbu3lGv80ZsMiB+WyKbfPiMD6Hywhx/NUEkl+uw==
 
 "@privacyresearch/ed25519-ts@^0.0.1-rc":
   version "0.0.1"
