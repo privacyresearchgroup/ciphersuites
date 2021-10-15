@@ -1,4 +1,11 @@
-import { makeDST, contextString, OPRFMode, OPRFCiphersuite, expand_message_xmd, Nh } from '..'
+import { makeDST, contextString, OPRFMode, OPRFCiphersuite, expand_message_xmd, Nh, HashFunction } from '..'
+import { sha512 } from 'hash.js'
+
+const sha512Hash: HashFunction = {
+    inputLen: 128,
+    outputLen: Nh[OPRFCiphersuite.Ristretto255SHA512],
+    hash: (m: string | number[] | Uint8Array) => Uint8Array.from(sha512().update(m).digest()),
+}
 
 describe('test standard expansion', () => {
     const OPRF_SPEC_ID = Uint8Array.from([86, 79, 80, 82, 70, 48, 55, 45]) // "VOPRF07-"
@@ -12,7 +19,7 @@ describe('test standard expansion', () => {
                 Uint8Array.from([0, 0, 0]),
                 dst,
                 255 * Nh[OPRFCiphersuite.Ristretto255SHA512] + 1,
-                Nh[OPRFCiphersuite.Ristretto255SHA512]
+                sha512Hash
             )
         }).toThrow('Requested expanded length too large.')
     })
@@ -27,7 +34,7 @@ describe('test standard expansion', () => {
                 Uint8Array.from([0, 0, 0]),
                 dst,
                 255 * Nh[OPRFCiphersuite.Ristretto255SHA512],
-                Nh[OPRFCiphersuite.Ristretto255SHA512]
+                sha512Hash
             )
         }).not.toThrow('Requested expanded length too large.')
     })
