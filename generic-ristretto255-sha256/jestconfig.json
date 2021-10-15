@@ -14,6 +14,6 @@
       "statements": 100
     }
   },
-  "coveragePathIgnorePatterns": ["node_modules", "__test__",  "index.js"],
+  "coveragePathIgnorePatterns": ["node_modules", "__test__", "index.js"],
   "verbose": true
 }
