@@ -1,0 +1,19 @@
+{
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "testRegex": "(src/__test__/.*\\.test\\..*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+  "collectCoverage": true,
+  "coverageDirectory": "coverage",
+  "coverageThreshold": {
+    "global": {
+      "branches": 90,
+      "functions": 97,
+      "lines": 97,
+      "statements": 95
+    }
+  },
+  "coveragePathIgnorePatterns": ["node_modules", "__test__", "bigint-integers", "index.js"],
+  "verbose": true
+}
