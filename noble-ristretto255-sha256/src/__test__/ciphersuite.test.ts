@@ -1,9 +1,9 @@
 import { ristretto255SHA512Ciphersuite } from '..'
 import { VerifiableClientContextImpl, VerifiableServerContextImpl } from '@privacyresearch/oprf-ts'
-import { hexToBytes } from '../ristretto255-sha512/from-noble-ed25519'
+import { hexToBytes } from '../from-noble-ed25519'
 import { numberArrayXOR, OPRFCiphersuite, OPRFMode } from '@privacyresearch/ciphersuite-shared'
 import { CURVE } from 'noble-ed25519'
-import { numberToHex } from '../ristretto255-sha512/serialization'
+import { numberToHex } from '../serialization'
 
 describe('Test ciphersuite with OPRF protocol', () => {
     const ciphersuite = ristretto255SHA512Ciphersuite(OPRFMode.Verified)

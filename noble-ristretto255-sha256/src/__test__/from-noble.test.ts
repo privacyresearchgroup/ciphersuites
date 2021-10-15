@@ -1,4 +1,4 @@
-import { invert } from '../ristretto255-sha512/from-noble-ed25519'
+import { invert } from '../from-noble-ed25519'
 
 describe('test functions copied from noble-ed25519', () => {
     test('invert throws on bad input', () => {
