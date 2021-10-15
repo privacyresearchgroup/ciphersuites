@@ -173,6 +173,10 @@ describe('Test ciphersuite with OPRF protocol', () => {
         }).toThrow()
     }
 
+    test('group order', () => {
+        expect(ciphersuite.GG.order().toString()).toEqual(ed.CURVE.n.toString())
+    })
+
     test('A.1.2.3 Test Vector 2 Batch Size 2: ServerVerifiableServerContextContext::evaluate', () => {
         verifiableServerContextBatchSize1Evaluate(vectorsA123)
     })
