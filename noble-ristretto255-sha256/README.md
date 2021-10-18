@@ -4,6 +4,7 @@ Implementation of the `OPRF(Ristretto255, SHA256)` ciphersuite from [this Intern
 Tested using [implementation of the VOPRF specification](https://github.com/privacyresearchgroup/oprf-ts).
 
 Implemented using [`noble-ed25519`](https://github.com/paulmillr/noble-ed25519).
+
 ## Usage
 
 Install:
@@ -11,6 +12,7 @@ Install:
 ```
 yarn add @privacyresearch/noble-ciphersuite-r255s256 noble-ed25519
 ```
+
 Create a `ciphersuite` object as follows.
 
 ```typescript
@@ -26,8 +28,8 @@ const pkSm = hexToBytes('0c0254e22063cae3e1bae02fb6fa20882664a117c0278eda6bda337
 const { skS, pkS } = ciphersuite.GG.deriveKeyPair(seed)
 const skSBytes = ciphersuite.GG.serializeScalar(skS)
 const pkSBytes = ciphersuite.GG.serializeElement(pkS)
-
 ```
+
 Now the `ciphersuite` object can be passed to [consuming protocols](https://github.com/privacyresearchgroup/oprf-ts).
 
 ## License

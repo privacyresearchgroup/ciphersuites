@@ -39,6 +39,7 @@ const skSBytes = ciphersuite.GG.serializeScalar(skS)
 const pkSBytes = ciphersuite.GG.serializeElement(pkS)
 
 ```
+
 Now the `ciphersuite` object can be passed to [consuming protocols](https://github.com/privacyresearchgroup/oprf-ts).
 
 ## License
