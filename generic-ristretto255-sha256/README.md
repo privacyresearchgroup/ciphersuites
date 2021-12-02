@@ -1,10 +1,10 @@
 # Standard Ristretto255-SHA256 ciphersuite implemented with `@privacyresearch/ed25519-ts`
 
-Implementation of the `OPRF(Ristretto255, SHA256)` ciphersuite from
+Implementation of the `OPRF(Ristretto255, SHA512)` ciphersuite from
 [this Internet-Draft OPRF protocol](https://tools.ietf.org/html/draft-irtf-cfrg-voprf). Tested using
 [implementation of the VOPRF specification](https://github.com/privacyresearchgroup/oprf-ts).
 
-This is a direct port of the `OPRF(Ristretto255, SHA256)` ciphersuite in
+This is a direct port of the `OPRF(Ristretto255, SHA512)` ciphersuite in
 [implementation of the VOPRF specification](https://github.com/privacyresearchgroup/oprf-ts), allowing it to be used
 in other protocols.
 
